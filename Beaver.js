@@ -216,16 +216,18 @@ function Beaver(componentName, userConfig = {}) {
 
       // Execute log synchronously or asynchronously
       if (finalConfig.asyncLogging) {
-        setImmediate ? setImmediate(executeLog) : setTimeout(executeLog, 0);
+        typeof setImmediate !== 'undefined'
+          ? setImmediate(executeLog)
+          : setTimeout(executeLog, 0);
       } else {
         executeLog();
       }
 
       // Send to webhook if configured (always async, non-blocking)
       if (finalConfig.useWebhook) {
-        sendLogViaWebhook(level, logMessage, metadata).catch(() => {
-          // Silently fail - already logged in sendLogViaWebhook
-        });
+        // Catch is intentionally empty - errors are already logged in sendLogViaWebhook
+        // and we don't want webhook failures to disrupt the main logging flow
+        sendLogViaWebhook(level, logMessage, metadata).catch(() => {});
       }
     };
   };
