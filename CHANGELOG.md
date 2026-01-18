@@ -5,14 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0] - 2026-01-18
+## [2.0.0] - 2025-01-18
 
 ### Added
 
 - Complete TypeScript definitions with comprehensive types and JSDoc comments
 - Input validation for configuration and component name
 - New utility methods: `getEnvironment()` and `getConfig()`
-- Comprehensive test suite with Jest (100+ test cases)
+- Comprehensive test suite with Jest (23 test cases with 91% coverage)
 - ESLint and Prettier configuration for code quality
 - Better error handling for axios webhook calls
 - Timeout configuration for webhook requests (5 seconds)
