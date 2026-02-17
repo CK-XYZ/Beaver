@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/FiendsXYZ/Beaver#readme",
   "dependencies": {
-    "axios": "^1.13.2"
+    "axios": "^1.13.5"
   },
   "devDependencies": {
     "@types/node": "^25.0.9",
